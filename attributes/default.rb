@@ -31,6 +31,8 @@ default["apache_kafka"]["config_dir"] = "/usr/local/kafka/config"
 default["apache_kafka"]["service_style"] = "upstart"
 # Currently only for upstart, the umask for the kafka server process
 default["apache_kafka"]["umask"] = 007
+default["apache_kafka"]["softlimit"] = 32768
+default["apache_kafka"]["hardlimit"] = 32768
 
 # Kafka configuration settings are detailed here.
 # https://kafka.apache.org/08/configuration.html

@@ -49,7 +49,9 @@ when "upstart"
     action :create
     mode "0644"
     variables(
-      :kafka_umask => sprintf("%#03o", node["apache_kafka"]["umask"])
+      :kafka_umask => sprintf("%#03o", node["apache_kafka"]["umask"]),
+      :kafka_hardlimit => node["apache_kafka"]["hardlimit"],
+      :kafka_softlimit => node["apache_kafka"]["softlimit"]
     )
     notifies :restart, "service[kafka]", :delayed
   end

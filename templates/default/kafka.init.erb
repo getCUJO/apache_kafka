@@ -17,7 +17,7 @@ pre-start script
     [ -r /etc/default/kafka ]
 end script
 
-limit nofile 32768 32768
+limit nofile <%= @kafka_softlimit %> <%= @kafka_hardlimit %>
 
 script
   [ -e "/etc/default/kafka" ] && . "/etc/default/kafka"
